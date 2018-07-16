@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mytagName="http://www.kdyzm.org/schema/user"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.kdyzm.org/schema/user	http://www.kdyzm.org/schema/user.xsd">
+	<bean id="testA"
+		class="com.kdyzm.spring.helloworld.cycle.setter.TestA"
+		scope="prototype">
+		<property name="testB" ref="testB"></property>
+	</bean>
+
+	<bean id="testB"
+		class="com.kdyzm.spring.helloworld.cycle.setter.TestB"
+		scope="prototype">
+		<property name="testC" ref="testC"></property>
+	</bean>
+
+	<bean id="testC"
+		class="com.kdyzm.spring.helloworld.cycle.setter.TestC"
+		scope="prototype">
+		<property name="testA" ref="testA"></property>
+	</bean>
+</beans>
