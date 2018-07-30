@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mytagName="http://www.kdyzm.org/schema/user"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.kdyzm.org/schema/user	http://www.kdyzm.org/schema/user.xsd">
+
+	<bean id="dataPropertyEditor" class="com.kdyzm.spring.helloworld.myeditor1.DataPropertyEditor">
+		<property name="format" value="yyyy-MM-dd" />
+	</bean>
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors">
+			<map>
+				<entry key="java.util.Date" value-ref="dataPropertyEditor"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="userManager" class="com.kdyzm.spring.helloworld.myeditor1.UserManager">
+		<property name="dateValue">
+			<value>2018-02-01</value>
+		</property>
+	</bean>
+</beans>

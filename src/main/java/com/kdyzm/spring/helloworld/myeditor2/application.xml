@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mytagName="http://www.kdyzm.org/schema/user"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.kdyzm.org/schema/user	http://www.kdyzm.org/schema/user.xsd">
+
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+			<bean
+				class="com.kdyzm.spring.helloworld.myeditor2.DatePropertyEditorRegistrar"></bean>
+		</property>
+	</bean>
+
+	<bean id="userManager" class="com.kdyzm.spring.helloworld.myeditor2.UserManager">
+		<property name="dateValue">
+			<value>2018-02-01</value>
+		</property>
+	</bean>
+</beans>

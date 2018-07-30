@@ -11,4 +11,9 @@ public class MyTestBean {
 		this.str = str;
 	}
 
+	@Override
+	public String toString() {
+		return "MyTestBean [str=" + str + "]";
+	}
+
 }
