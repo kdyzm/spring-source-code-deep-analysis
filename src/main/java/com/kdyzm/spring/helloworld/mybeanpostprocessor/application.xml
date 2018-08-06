@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mytagName="http://www.kdyzm.org/schema/user"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.kdyzm.org/schema/user	http://www.kdyzm.org/schema/user.xsd">
+	<bean id="bfpp"
+		class="com.kdyzm.spring.helloworld.mybeanpostprocessor.ObsenityRemovingBeanFactoryPostProssor">
+		<property name="obscenties">
+			<set>
+				<value>bollocks</value>
+				<value>winky</value>
+				<value>bum</value>
+				<value>Microsoft</value>
+			</set>
+		</property>
+	</bean>
+
+	<bean
+		class="com.kdyzm.spring.helloworld.mybeanpostprocessor.SimplePostProsessor"
+		id="simpleBean">
+		<property name="connectionString" value="bollocks"></property>
+		<property name="password" value="imaginecup"></property>
+		<property name="userName" value="Microsoft"></property>
+	</bean>
+</beans>

@@ -1,0 +1,3 @@
+# BeanFactoryPostProcessor的用法
+
+P148 使用自定义BeanFactoryPostProcessor屏蔽敏感词汇
